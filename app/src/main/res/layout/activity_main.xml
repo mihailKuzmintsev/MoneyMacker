@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_pattern"
     tools:context="com.loftschool.moneymacker.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textColor="@color/colorText"
-        android:background="@color/colorBackground"
-        android:textSize="@dimen/textSize"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+   <LinearLayout
+       android:background="@android:color/white"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       >
 
-</android.support.constraint.ConstraintLayout>
+       <EditText
+           android:padding="16dp"
+           android:layout_weight="1"
+           android:id="@+id/name"
+           android:inputType="text"
+           android:hint="@string/title_string"
+           android:maxLines="1"
+           android:fontFamily="sans-serif-light"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           />
+
+       <EditText
+           android:gravity="end"
+           android:id="@+id/number"
+           android:inputType="number"
+           android:hint="@string/price_string"
+           android:maxLines="1"
+           android:fontFamily="sans-serif-light"
+           android:layout_width="@dimen/price_width"
+           android:layout_height="wrap_content"
+           />
+
+       <ImageButton
+           android:background="@android:color/white"
+           android:enabled="false"
+           android:id="@+id/add"
+           android:layout_gravity="center_vertical"
+           android:src="@drawable/ic_add_black_24dp"
+           android:layout_width="30dp"
+           android:layout_height="wrap_content"
+           android:contentDescription="addButton"
+           />
+
+   </LinearLayout>
+
+</FrameLayout>
