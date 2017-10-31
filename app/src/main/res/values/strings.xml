@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">MoneyMacker</string>
     <string name="title_string">Название</string>
-    <string name="price_string">0 р</string>
+    <string name="price_string">0 ₽</string>
 </resources>
