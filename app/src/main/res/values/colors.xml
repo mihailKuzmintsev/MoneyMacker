@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">#84c0c5</color>
     <color name="colorText">#ffffff</color>
+    <color name="item_name_bg">#fcc31e</color>
+    <color name="item_price_bg">#ae8556</color>
+    <color name="color_rub">#051698</color>
+    <color name="itemTextColor">#ffffff</color>
 </resources>

@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         final EditText titleEdit = findViewById(R.id.name);
         final EditText priceEdit = findViewById(R.id.number);
         final ImageButton addButton = findViewById(R.id.add);
+
+
         titleEdit.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
