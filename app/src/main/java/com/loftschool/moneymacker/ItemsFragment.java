@@ -24,6 +24,8 @@ import static com.loftschool.moneymacker.Item.TYPE_UNKNOWN;
 public class ItemsFragment extends Fragment {
 
     private static final int LOADER_ITEMS = 0;
+    private static final int ADD_ITEM = 1;
+
 
 
     private static final String KEY_TYPE = "TYPE";
@@ -104,6 +106,36 @@ public class ItemsFragment extends Fragment {
 
             @Override
             public void onLoaderReset(Loader<List<Item>> loader) {
+
+            }
+        }).forceLoad();
+    }
+
+    private void addItem(final Item item) {
+        getLoaderManager().restartLoader(ADD_ITEM, null, new LoaderManager.LoaderCallbacks<AddResult>() {
+            @SuppressLint("StaticFieldLeak")
+            @Override
+            public Loader<AddResult> onCreateLoader(int id, Bundle args) {
+                return new AsyncTaskLoader<AddResult>(getContext()) {
+                    @Override
+                    public AddResult loadInBackground() {
+                        try {
+                            return api.add(item.name, item.price, item.type).execute().body();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            return null;
+                        }
+                    }
+                };
+            }
+
+            @Override
+            public void onLoadFinished(Loader<AddResult> loader, AddResult data) {
+                adapter.updateId(item, data.id);
+            }
+
+            @Override
+            public void onLoaderReset(Loader<AddResult> loader) {
 
             }
         }).forceLoad();

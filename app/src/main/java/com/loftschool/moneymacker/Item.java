@@ -7,8 +7,8 @@ public class Item {
     public final static String TYPE_UNKNOWN = "unknown";
 
     public String name;
-    public String type;
     public int price;
+    public String type;
     public int id;
 
     public Item(String name, String type, int price) {
