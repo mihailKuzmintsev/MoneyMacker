@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_pattern"
-    tools:context="com.loftschool.moneymacker.ItemsActivity">
+    tools:context="com.loftschool.moneymacker.ItemsFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"
@@ -20,4 +20,4 @@
 
 
 
-</FrameLayout>
+    </FrameLayout>
