@@ -6,31 +6,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
 
-    private List<Item> items = new ArrayList<>();
+    private List<Item> items = Collections.emptyList();
 
-    public ItemsAdapter() {
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Скеовородка с антипригарным покрытием", 55));
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Скеовородка с антипригарным покрытием", 55));
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Скеовородка с антипригарным покрытием", 55));
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Скеовородка с антипригарным покрытием", 55));
-        items.add(new Item("Молоко", 35));
-        items.add(new Item("Зубная щетка", 1500));
-        items.add(new Item("Скеовородка с антипригарным покрытием", 55));
+    public void setItems(List<Item> items) {
+        this.items = items;
+        notifyDataSetChanged();
     }
 
 
@@ -65,8 +52,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         }
 
         void bind(Item item) {
-            price.setText( String.format("%s \u20BD", String.valueOf(item.getPrice())));
-            name.setText(item.getName());
+            price.setText( String.format("%s \u20BD", String.valueOf(item.price)));
+            name.setText(item.name);
         }
     }
 }

@@ -2,27 +2,18 @@ package com.loftschool.moneymacker;
 
 public class Item {
 
-    private String name;
-    private int price;
+    public final static String TYPE_EXPENSE = "expense";
+    public final static String TYPE_INCOME = "income";
+    public final static String TYPE_UNKNOWN = "unknown";
 
-    public Item(String name, int price) {
+    public String name;
+    public String type;
+    public int price;
+    public int id;
+
+    public Item(String name, String type, int price) {
         this.name = name;
-        this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
+        this.type = type;
         this.price = price;
     }
 }
