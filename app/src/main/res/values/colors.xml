@@ -6,4 +6,6 @@
     <color name="item_name_bg">#fcc31e</color>
     <color name="item_price_bg">#ae8556</color>
     <color name="itemTextColor">#ffffff</color>
+    <color name="appBarTextColor">#ffffff</color>
+    <color name="appBarTextColorOpacity">#41ffffff</color>
 </resources>

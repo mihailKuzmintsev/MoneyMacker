@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/appBarTextColor</item>
+        <item name="android:textColorSecondary">@color/appBarTextColorOpacity</item>
+        <item name="android:textSize">@dimen/appBarTextSize</item>
     </style>
 
     <style name="ItemText">
