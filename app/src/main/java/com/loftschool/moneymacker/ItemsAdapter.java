@@ -12,6 +12,7 @@ import java.util.List;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
+
     private List<Item> items = new ArrayList<>();
 
     public ItemsAdapter() {
