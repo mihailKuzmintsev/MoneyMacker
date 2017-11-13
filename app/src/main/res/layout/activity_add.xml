@@ -28,9 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/header_height"
             android:orientation="horizontal"
-            android:elevation="6dp"
-            >
-
+            android:elevation="6dp">
 
             <EditText
                 android:padding="16dp"
@@ -44,8 +42,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:textColor="@color/colorAddText"
-                />
+                android:textColor="@color/colorAddText"/>
 
             <EditText
                 android:id="@+id/number"
@@ -57,18 +54,17 @@
                 android:layout_width="@dimen/price_width"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:textColor="@color/colorAddText"
-                />
+                android:textColor="@color/colorAddText"/>
 
             <ImageButton
                 android:id="@+id/add"
-                android:layout_width="73dp"
-                android:layout_height="match_parent"
+                android:enabled="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/add_button"
-                android:clickable="false"
                 android:contentDescription="addButton"
-                android:gravity="center"
+                android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_add_black_30dp" />
 
         </LinearLayout>
