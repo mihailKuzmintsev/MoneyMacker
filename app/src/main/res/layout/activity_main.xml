@@ -20,8 +20,6 @@
             app:title="Учет бюджета"
             android:paddingStart="36dp"
             tools:ignore="RtlSymmetry">
-
-
         </android.support.v7.widget.Toolbar>
 
 

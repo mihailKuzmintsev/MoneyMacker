@@ -1,6 +1,8 @@
 package com.loftschool.moneymacker;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable{
 
     public final static String TYPE_EXPENSE = "expense";
     public final static String TYPE_INCOME = "income";
@@ -11,7 +13,7 @@ public class Item {
     public String type;
     public int id;
 
-    public Item(String name, String type, int price) {
+    public Item(String name, int price, String type) {
         this.name = name;
         this.type = type;
         this.price = price;
