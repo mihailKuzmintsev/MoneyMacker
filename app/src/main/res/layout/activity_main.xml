@@ -18,7 +18,8 @@
             android:layout_height="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|enterAlways"
             app:title="Учет бюджета"
-            android:paddingLeft="36dp">
+            android:paddingStart="36dp"
+            tools:ignore="RtlSymmetry">
 
 
         </android.support.v7.widget.Toolbar>
@@ -37,7 +38,7 @@
         android:id="@+id/pages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </android.support.v4.view.ViewPager>
 
