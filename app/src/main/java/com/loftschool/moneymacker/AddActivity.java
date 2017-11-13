@@ -38,7 +38,7 @@ public class AddActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent result = new Intent();
-                result.putExtra(RESULT_ITEM, new Item(titleEdit.getText().toString(), 100, type ));
+                result.putExtra(RESULT_ITEM, new Item(titleEdit.getText().toString(), Integer.valueOf(priceEdit.getText().toString()), type ));
                 setResult(RESULT_OK, result);
                 finish();
             }

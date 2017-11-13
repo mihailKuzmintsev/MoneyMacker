@@ -8,4 +8,7 @@
     <color name="itemTextColor">#ffffff</color>
     <color name="appBarTextColor">#ffffff</color>
     <color name="appBarTextColorOpacity">#41ffffff</color>
+    <color name="colorFAB">#58a98f</color>
+    <color name="colorRT">#41ffffff</color>
+    <color name="colorAddText">#000000</color>
 </resources>
