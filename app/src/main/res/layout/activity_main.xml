@@ -8,6 +8,7 @@
     tools:context="com.loftschool.moneymacker.ItemsFragment">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme">
@@ -16,12 +17,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways"
+            app:layout_scrollFlags="snap|enterAlways"
             app:title="Учет бюджета"
             android:paddingStart="36dp"
             tools:ignore="RtlSymmetry">
-
-
         </android.support.v7.widget.Toolbar>
 
 
