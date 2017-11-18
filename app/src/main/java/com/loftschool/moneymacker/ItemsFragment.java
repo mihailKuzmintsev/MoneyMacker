@@ -1,10 +1,12 @@
 package com.loftschool.moneymacker;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
@@ -105,8 +107,10 @@ public class ItemsFragment extends Fragment {
                 return actionMode != null;
             }
 
+            @SuppressLint("DefaultLocale")
             private void toggleSelection(int position) {
                 adapter.toggleSelection(position);
+                actionMode.setTitle(String.format("Выделено %d", adapter.getSelectedItemsCount()));
             }
         });
 
@@ -226,8 +230,7 @@ public class ItemsFragment extends Fragment {
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.menu_remove: {
-                    removeSelectedItems();
-                    actionMode.finish();
+                    showDialog();
                     return true;
                 }
                 default:
@@ -243,6 +246,19 @@ public class ItemsFragment extends Fragment {
     };
 
     private void showDialog() {
+        ConfirmationDialog dialog = new ConfirmationDialog();
+        dialog.setListener(new ConfirmationDialogListener() {
+            @Override
+            public void onPositiveClick(DialogInterface dialog, int button) {
+                removeSelectedItems();
+                actionMode.finish();
+            }
 
+            @Override
+            public void onNegativeClick(DialogInterface dialog, int button) {
+
+            }
+        });
+        dialog.show(getFragmentManager(), "Confirmation");
     }
 }
