@@ -15,7 +15,9 @@
         android:theme="@style/AppTheme"
         android:name=".App"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.Toolbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,8 +27,12 @@
             android:screenOrientation="portrait"
             android:label="@string/add_scr_title"
             android:parentActivityName=".MainActivity"
-            android:windowSoftInputMode="stateAlwaysVisible"
-            />
+            android:windowSoftInputMode="stateAlwaysVisible">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
