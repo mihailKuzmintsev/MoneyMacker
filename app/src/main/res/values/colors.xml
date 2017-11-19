@@ -11,4 +11,12 @@
     <color name="colorFAB">#58a98f</color>
     <color name="colorRT">#41ffffff</color>
     <color name="colorAddText">#000000</color>
+
+    <color name="colorTabIndicator">#ffff8d</color>
+    <color name="colorTabTextActive">#FFFFFF</color>
+    <color name="colorTabTextDefault">#ddede8</color>
+
+    <color name="colorItem">#fcc31e</color>
+    <color name="colorItemShadow">#30303030</color>
+    <color name="colorItemSelected">#985305</color>
 </resources>

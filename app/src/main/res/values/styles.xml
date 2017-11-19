@@ -6,9 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorPrimary">@color/appBarTextColor</item>
-        <item name="android:textColorSecondary">@color/appBarTextColorOpacity</item>
-        <item name="android:textSize">@dimen/appBarTextSize</item>
+    </style>
+    
+    <style name="AppTheme.Toolbar" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionModeBackground">@color/colorPrimary</item>
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
     <style name="ItemText">

@@ -5,7 +5,8 @@
     android:minHeight="65dp"
     android:layout_margin="5dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_bg">
 
     <TextView
         style="@style/ItemText"
@@ -14,7 +15,6 @@
         android:textSize="20sp"
         android:layout_weight="1"
         android:gravity="center_vertical"
-        android:background="@color/item_name_bg"
         android:layout_width="0dp"
         android:layout_height="match_parent" />
 
@@ -24,7 +24,7 @@
         tools:text="35 ₽"
         android:textSize="24sp"
         android:gravity="center"
-        android:background="@color/item_price_bg"
+        android:background="@color/colorItemShadow"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />
 

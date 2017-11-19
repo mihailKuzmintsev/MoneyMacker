@@ -5,31 +5,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.loftschool.moneymacker.ItemsFragment">
+    tools:context="com.loftschool.moneymacker.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="snap|enterAlways"
-            app:title="Учет бюджета"
-            android:paddingStart="36dp"
-            tools:ignore="RtlSymmetry">
-        </android.support.v7.widget.Toolbar>
-
+            android:layout_height="?attr/actionBarSize"/>
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabGravity="fill"
-            app:tabMode="fixed" />
+            app:tabIndicatorColor="@color/colorTabIndicator"
+            app:tabSelectedTextColor="@color/colorTabTextActive"
+            app:tabTextColor="@color/colorTabTextDefault" />
 
     </android.support.design.widget.AppBarLayout>
 
