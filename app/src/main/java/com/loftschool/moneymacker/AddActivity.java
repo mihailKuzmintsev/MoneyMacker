@@ -46,12 +46,13 @@ public class AddActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent result = new Intent();
                 String name = titleEdit.getText().toString();
-                int price = (Objects.equals(priceEdit.getText().toString(), "")) ? 0 : Integer.valueOf(priceEdit.getText().toString());
+                int price = Integer.valueOf(priceEdit.getText().toString());
                 result.putExtra(RESULT_ITEM, new Item(name, price, type ));
                 setResult(RESULT_OK, result);
                 finish();
             }
         });
+
 
         titleEdit.addTextChangedListener(textWatcher);
         priceEdit.addTextChangedListener(textWatcher);

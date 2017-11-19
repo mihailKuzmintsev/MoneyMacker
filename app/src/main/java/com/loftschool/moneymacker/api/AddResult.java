@@ -1,4 +1,4 @@
-package com.loftschool.moneymacker;
+package com.loftschool.moneymacker.api;
 
 
 public class AddResult {

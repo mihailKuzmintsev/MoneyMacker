@@ -32,6 +32,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
     public void updateId(Item item, int id) {
         item.id = id;
         this.items.add(item);
+        notifyDataSetChanged();
     }
 
 
