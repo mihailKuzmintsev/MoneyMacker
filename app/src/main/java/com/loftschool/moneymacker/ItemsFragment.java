@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
@@ -15,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,6 +22,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.loftschool.moneymacker.api.AddResult;
+import com.loftschool.moneymacker.api.Result;
 import com.loftschool.moneymacker.api.Api;
 
 import java.io.IOException;
@@ -36,6 +36,7 @@ public class ItemsFragment extends Fragment {
 
     private static final int LOADER_ITEMS = 0;
     private static final int ADD_ITEM = 1;
+    private static final int REMOVE_ITEM = 2;
 
     public static final String TAG = "ItemsFragment";
 
@@ -173,7 +174,7 @@ public class ItemsFragment extends Fragment {
                     @Override
                     public AddResult loadInBackground() {
                         try {
-                            return api.add(item.name, item.price, item.type).execute().body();
+                            return api.add(item.price, item.name, item.type).execute().body();
                         } catch (IOException e) {
                             e.printStackTrace();
                             return null;
@@ -194,6 +195,37 @@ public class ItemsFragment extends Fragment {
         }).forceLoad();
     }
 
+    private void removeItem(final Item item) {
+        getLoaderManager().restartLoader(REMOVE_ITEM, null, new LoaderManager.LoaderCallbacks<Result>() {
+
+            @SuppressLint("StaticFieldLeak")
+            @Override
+            public Loader<Result> onCreateLoader(int id, Bundle args) {
+                return new AsyncTaskLoader<Result>(getContext()) {
+                    @Override
+                    public Result loadInBackground() {
+                        try {
+                            return api.remove(item.id).execute().body();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            return null;
+                        }
+                    }
+                };
+            }
+
+            @Override
+            public void onLoadFinished(Loader<Result> loader, Result data) {
+
+            }
+
+            @Override
+            public void onLoaderReset(Loader<Result> loader) {
+
+            }
+        }).forceLoad();
+    }
+
     private void showError(String error) {
         Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
     }
@@ -204,12 +236,13 @@ public class ItemsFragment extends Fragment {
         if (requestCode == AddActivity.RC_ADD_ITEM && resultCode == RESULT_OK) {
             Item item = (Item) data.getSerializableExtra(AddActivity.RESULT_ITEM);
             Toast.makeText(getContext(), item.name + ": " + item.price + " \u20BD", Toast.LENGTH_LONG).show();
+            addItem(item);
         }
     }
 
     private void removeSelectedItems() {
         for (int i = adapter.getSelectedItemsCount() - 1; i>=0; i--) {
-            adapter.remove(adapter.getSelectedItems().get(i));
+            removeItem(adapter.remove(adapter.getSelectedItems().get(i)));
         }
     }
 

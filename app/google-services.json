@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "12712155460",
+    "project_id": "moneymaker-7caac"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12712155460:android:983453fb2efaa73f",
+        "android_client_info": {
+          "package_name": "com.loftschool.moneymacker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12712155460-jcvtuerf538jjissiquucvot5l0e208e.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "12712155460-1ae110nqrdi466bjv5uajlas9upm38d0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.loftschool.moneymacker",
+            "certificate_hash": "a4d4a8c275ae9748cd32897c4c1e19b2c1f84fa8"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxF0TFQZg1mud7yuM7zn9syd6ATOm3KxU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

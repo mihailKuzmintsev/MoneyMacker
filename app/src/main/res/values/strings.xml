@@ -7,6 +7,9 @@
     <string name="tab_balance">Баланс</string>
     <string name="add_scr_title">Новая запись</string>
 
+    <string name="app_desc">Ваш незаменимый помощник в управлении бюджетом
+</string>
+
     <string-array name="tabs_titles">
         <item>@string/tab_expenses</item>
         <item>@string/tab_incomes</item>
